@@ -11,7 +11,7 @@ class generatedImg{
 
 //問題に使われる画像オブジェクトを定義
 const img01 = new generatedImg(1, ['犬も歩けば棒に当たる', 'いぬもあるけばぼうにあたる'], 'image/InumoArukebaBouniataru.jpg', 'ことわざ');
-const img02 = new generatedImg(2, ['一石二鳥', 'いっせきにちょう'], 'image/IssekiNityou.jpg', 'ことわざ');
+const img02 = new generatedImg(2, [一石二鳥, 'いっせきにちょう'], 'image/IssekiNityou.jpg', 'ことわざ');
 const img03 = new generatedImg(3, ['壁に耳あり障子に目あり', 'かべにみみありしょうじにめあり'], 'image/KabenimimiariSyouzinimeari.jpg', 'ことわざ');
 const img04 = new generatedImg(4, ['光陰矢の如し', 'こういんやのごとし'], 'image/KouinYanogotoshi.jpg', 'ことわざ');
 const img05 = new generatedImg(5, ['泣きっ面に蜂', 'なきっつらにはち'], 'image/NakitturaniHachi_2.jpg', 'ことわざ');
@@ -57,7 +57,7 @@ const img44 = new generatedImg(44, ['海老で鯛を釣る', 'えびはたいを
 
 
 //リストに格納
-const img_list = [img01, img02,img03, img04, img05, img06, img07, img08, img09, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25, img26, img27, img28, img29, img30, img31, img32, img33, img34, img35, img36, img37, img38, img39, img40, img41, img42, img43, img44];
+const img_list = [img01, img02,img03, img04, img05, img06, img07, img08, img09, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25, img26, img27, img28, img29, img30, img31, img32, img33, img34, img35, img36, img37, img38];
 const used_img = [];
 
 //正答数
@@ -150,7 +150,7 @@ function game_playing(input_id, btn_id, skip_btn_id, display_id, message_id, que
 
     //送信ボタンを押したときの処理
     btn.addEventListener('click', () => {
-        if(img_obj.answer.includes(input.value)){
+        if(input.value.includes(img_obj.answer)){
             message.innerHTML = "正解！"
             score++;
             document.getElementById(score_id).innerHTML = score;
@@ -165,7 +165,7 @@ function game_playing(input_id, btn_id, skip_btn_id, display_id, message_id, que
     //エンターキーを押したときの処理
     window.document.onkeydown = function(event){
         if (event.key === 'Enter') {
-            if(img_obj.answer.includes(input.value)){
+            if(input.value == img_obj.answer){
                 message.innerHTML = "正解！";
                 score++;
                 document.getElementById(score_id).innerHTML = score;
